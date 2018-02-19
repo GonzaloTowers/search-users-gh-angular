@@ -1,0 +1,23 @@
+<div class="main-container">
+<h1>NuvoSearch</h1>
+
+<form>
+  <input type="text" placeholder="Username" name="user" class="input" #user>
+  <button type="submit" (click)="search(user.value)" class="button material-icons">search</button>
+</form>
+
+<p *ngIf="error_text">{{error_text}}</p>
+<div *ngFor="let user of results" (click)="getUser(user.login)">
+  <div class="user-box">
+    <a href="/user/{{user.login}}">
+      <div class="img-box">
+        <img [src]="user.avatar_url" class="profile-image">
+      </div>
+      <div class="content-box">
+        <!--<a href="{{user.html_url}}" target="_self" class="user-name">{{user.login}}</a>-->
+        <p class="user-name">{{user.login}}</p>
+      </div>
+    </a>
+  </div>
+</div>
+</div>

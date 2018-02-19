@@ -1,0 +1,96 @@
+@main-color: #397F74;
+@secondary-color: #79B5A5;
+@medium-color: #C3E5D8;
+@bg-color: #E5FFED;
+@white: #f9f9f9;
+@gray: #c9c9c9;
+
+@title-font: 1.7em/1 'Roboto', sans-serif;
+@main-text: 1.3em/1 'Roboto', sans-serif;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul{
+    list-style: none;
+}
+
+.main-container{
+    width: 100%;
+    height: fix-content;
+    text-align: center;
+}
+
+h2{
+    font: @title-font;
+    color: @main-color;
+}
+
+.header{
+    width: 100%;
+    padding: 10px;
+    background-color: @medium-color;
+}
+
+#user{
+    .avatar_box(){
+        float: left;
+        margin: 50px;
+        min-height: 1500px;
+    }
+    .user_details(){
+        width: 100%;
+        text-align: left;
+        margin-top: 50px;
+        font: @main-text;
+    }
+    .repos(){
+        width: 100%;
+        text-align: left;
+        margin-top: 30px;
+    }
+}
+
+.avatar-box{
+    #user > .avatar_box();
+}
+
+.user-details{
+    #user > .user_details();
+}
+
+.title-card{
+    font: @title-font;
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: @gray;
+    border-radius: 2px;
+}
+
+.repositories{
+    #user > .repos();
+}
+
+.repos-list{
+    font: @main-text;
+}
+
+.repos-list a{
+    color: @main-color;
+    &hover{
+        color: @secondary-color;
+    }
+}
+
+@media (max-width:823px){
+    .avatar-box{
+        float: none;
+        margin: 50px auto;
+    }
+    .user-details, .repositories{
+        text-align: center;
+    }
+}
